@@ -1,3 +1,6 @@
+ #include <stdio.h>
+ #define SIZE 30
+ 
  struct person{
  int day;
  int month;
@@ -8,12 +11,16 @@
  char lastname[30];
 };
 
+// global variables
+struct person employees[SIZE];
+int countEmp=0;
+
 bool isValidDate(int dd, int mm, int yy);
-bool isGapYear(int year);
+bool isLeapYear(int year);
 bool isValidSex(char z);
-FILE* openFile(char* fileName);
+FILE* openFile(char* fileName, char* mode);
 void closeFile(FILE *fr);
-struct person* getDataFromFile(FILE *fr);
+bool getDataFromFile(FILE *fr);
 void sortDataByBirthday(struct person *p, int count);
 void sortDataByLastName(struct person *p, int count);
 void printData(struct person *p, int count);
