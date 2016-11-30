@@ -13,7 +13,7 @@
 
 // global variables
 struct person employees[SIZE];
-int countEmp=0;
+
 
 bool isValidDate(int dd, int mm, int yy);
 bool isLeapYear(int year);
