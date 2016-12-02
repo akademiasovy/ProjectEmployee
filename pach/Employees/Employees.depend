@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1480666321 source:d:\sovy\programovanie\c\projekt6_struct\pach\employees\main.c
+	"Employee.h"
+
+1480668926 d:\sovy\programovanie\c\projekt6_struct\pach\employees\employee.h
+	<stdbool.h>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
+1480670110 source:d:\sovy\programovanie\c\projekt6_struct\pach\employees\employee.c
+	"Employee.h"
+
