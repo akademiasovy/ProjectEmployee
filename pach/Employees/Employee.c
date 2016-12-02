@@ -98,24 +98,28 @@ float getAverageSalary(struct person employees[], int count, char sex){
 void createEmailFile(struct person employees[], int count, FILE* fileName){
     int i,j;
     char match = '1';
+    char matchedEmails[80][80];
     char temp[80];
+    int length;
     for(i=0; i<count; i++){
-        employees[i].email[0] = employees[i].firstname[0];
+        employees[i].email[0] = tolower(employees[i].firstname[0]);
         employees[i].email[1] = '.';
         employees[i].email[2] = '\0';
-        strcat(employees[i].email, employees[i].lastname);
-        if(i>0){
-            for(j=0; j<i; j++){
-                strcat(temp, employees[i].email);
-                strcat(temp, "@gmail.com");
-                if(strcmp(employees[j].email,temp) == 0){
-                    employees[i].email[strlen(employees[i].email)] = match++;
-                    employees[i].email[strlen(employees[i].email)+1] = '\0';
-                }
-
-                temp[0] = '\0';
+        employees[i].lastname[0] = tolower(employees[i].lastname[0]);
+        strcat(employees[i].email, tolower(employees[i].lastname));
+    }
+    for(i=0; i<count-1; i++){
+        length = strlen(employees[i].email);
+        for(j=i+1; j<count; j++){
+            if(strcmp(employees[i].email, employees[j].email) == 0){
+                employees[j].email[length] = match++;
+                employees[j].email[length+1] = '\0';
             }
         }
+        match = '1';
+    }
+
+    for(i=0; i<count; i++){
         strcat(employees[i].email, "@gmail.com");
         fprintf(fileName, "%s\n", employees[i].email);
     }
