@@ -21,9 +21,9 @@ bool isValidSex(char z);
 FILE* openFile(char* fileName, char* mode);
 void closeFile(FILE *fr);
 int getDataFromFile(FILE *fr, struct person employees[]);
-void sortDataByBirthday(struct person *p, int count);
-void sortDataByLastName(struct person *p, int count);
-void printData(struct person *p, int count);
+void sortDataByBirthday(struct person *employees, int count);
+void sortDataByLastName(struct person *employees, int count);
+void printData(struct person *employees, int count);
 float getAverageSalary(struct person *p, int count, char sex);
 void createEmailFile(struct person *p, int count, char *fileName);
 
