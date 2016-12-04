@@ -20,8 +20,14 @@ int main() {
        printf("\nCountEmp: %d\n", countEmp);
        
       sortEmployeesByBirthday(ptr,countEmp);
+      printf("Sorted by Birthday\m");
       printData(ptr,countEmp); 
-	  printf("\n\n");
+	  printf("\n");
+	  
+	  sortEmployeesByLastName(ptr,countEmp);
+	  printf("SortedByLastName: \n");
+	  printData(ptr,countEmp);
+	  
 	 
 	}
 	return 0;

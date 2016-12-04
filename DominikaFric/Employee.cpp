@@ -109,7 +109,7 @@ int getDataFromFile(FILE *fr, struct person employees[]){ //fill array with RELE
 }
 
 //sorts employees by lastname
-void sortEmployeesByLastname(struct person *p,int count){ //gotta test this
+void sortEmployeesByLastName(struct person *p,int count){ 
 	int i,j;
 	struct person temp;
 	for(i=1;i<=count;i++){
@@ -188,12 +188,12 @@ void createEmailFile(struct person *p, int count){
 	
 	for(i=0;i<count;i++){
 		newMail[0]='\0';
-		strcat(newMail, p[i].firstname);
+		strncat(newMail, p[i].firstname,20);
 		strcat(newMail, ".");
-		strcat(newMail, p[i].lastname);
+		strncat(newMail, p[i].lastname,20);
 		strcat(newMail,"@gmail.com");
-		fprintf(fp,"%s",newMail);
-		printf("%s",newMail);
+		fprintf(fp,"%s\n",newMail);
+		
 	}
 	
 	fclose(fp);
