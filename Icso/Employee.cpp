@@ -4,12 +4,20 @@
 #include "struct.h"
 
 
-
+/** @author: Jakub Icso
+	@input: year
+	@output: checks if year is leap
+**/
 
 bool isLeapYear(int year){
    return year> 0 && year %4 == 0 ? true:false;
 }
 
+/** @author: Jakub Icso
+	@input: day, month, year
+	@output: checks if date is correct
+**/
+	
 bool isValidDate(int dd, int mm, int yy){
   if(yy < 0)
        return false;
@@ -41,6 +49,11 @@ bool isValidDate(int dd, int mm, int yy){
   return false;
 }
 
+/** @author: Jakub Icso
+	@input: sex
+	@output: checks if employees are men or women
+**/
+	
 bool isValidSex(char z){
     toupper(z);
 	if(z == 'M' || z == 'F')
@@ -49,7 +62,9 @@ bool isValidSex(char z){
 	   return false;   
 }
 
-
+/** @author: Jakub Icso
+	@output: open file
+**/
 
 FILE* openFile(char* fileName, char* mode){
    if(fileName == NULL || strlen(fileName) < 5)
@@ -68,6 +83,11 @@ void closeFile(FILE *fr){
    if(fr!=NULL)
       fclose(fr);
 }
+
+/** @author: Jakub Icso
+	@input: data
+	@output: reads data from file
+**/
 
 int getDataFromFile(FILE *fr, struct person employees[]){
 
@@ -90,6 +110,11 @@ int getDataFromFile(FILE *fr, struct person employees[]){
    }
    return countEmp;  
 }
+
+/** @author: Jakub Icso
+	@input: date 
+	@output: sorts employees by their birth date
+**/
 
 void sortDataByBirthday(struct person *p, int count){
 	
@@ -136,6 +161,11 @@ void sortDataByBirthday(struct person *p, int count){
 }
 }
 
+/** @author: Jakub Icso
+	@input: last name
+	@output: sort employees by their last name
+**/
+
 void sortDataByLastName(struct person *p, int count){
 	
 	int j, k;
@@ -154,6 +184,10 @@ void sortDataByLastName(struct person *p, int count){
 	}
 }
 
+/** @author: Jakub Icso
+	@output: prints data
+**/
+	
 void printData(struct person *p, int count){
 	
 	int i;
@@ -161,6 +195,11 @@ void printData(struct person *p, int count){
 	printf("%d%d%d%f %c %s%s", p[i].month, p[i].year , p[i].salary , p[i].sex, 
 	p[i].firstname, p[i].lastname);
 }
+
+/** @author: Jakub Icso
+	@input: salary
+	@output: compute average salary of employees
+**/
 
 float getAverageSalary(struct person *p, int count, char sex){
 	
@@ -191,7 +230,13 @@ for(i=0; i < count; i++){
 		}
 	}
 	averageSalF = tempSalF/countPersF;	
+	
+	return averageSalF averageSalM;
 }
+
+/** @author: Jakub Icso
+	@output: creates employees email adress
+**/
 
 void createEmailFile(struct person *p, int count, FILE *fileName){
 	
