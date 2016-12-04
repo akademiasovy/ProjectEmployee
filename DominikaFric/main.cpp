@@ -18,8 +18,9 @@ int main() {
     if(fr!=NULL){
        countEmp=getDataFromFile(fr, &employees[0]);
        printf("\nCountEmp: %d\n", countEmp);
+       
+      sortEmployeesByBirthday(ptr,countEmp);
       printData(ptr,countEmp); 
-	   
 	  printf("\n\n");
 	 
 	}

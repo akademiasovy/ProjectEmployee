@@ -21,18 +21,13 @@ bool isValidDate(int dd, int mm, int yy);
 bool isLeapYear(int year);
 bool isValidSex(char z);
 bool isValidSalary(float s);
-//bool isValidFirstname(char firstName); MAYBE LATER
-//bool isValidLastName(char lName);
 FILE* openFile(char* fileName, char* mode);
 void closeFile(FILE *fr);
 int getDataFromFile(FILE *fr, struct person employees[]);
-void sortEmployeesBySalary(struct person *p,int count);
-void sortDataByBirthday(struct person *p, int count);
-void sortDataByLastName(struct person *p, int count);
+void sortEmployeesByBirthday(struct person *p, int count);
+void sortEmployeesByLastName(struct person *p, int count);
 void printData(struct person *ptr, int count);
 float getAverageSalary(struct person *p, int count, char sex);
-void createEmailFile(struct person *p, int count, char *fileName);
-//add email file
-//sort by last name
-//avg salary
+void createEmailFile(struct person *p, int count);
+
 
